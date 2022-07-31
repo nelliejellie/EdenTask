@@ -28,15 +28,15 @@ export default {
     }
   },
   async created(){
-    // cache data gotten from the store
-    if(this.$store.state.dogs.length < 1){
-      await this.$store.dispatch("getDogs")
-    }
-    this.$store.getters.myDogs
-    if(this.$store.state.breeds.length < 1){
-      await this.$store.dispatch("getBreedList")
-    }
-    this.$store.getters.myBreeds
+    // // cache data gotten from the store
+    // if(this.$store.state.dogs.length < 1){
+    //   await this.$store.dispatch("getDogs")
+    // }
+    // this.$store.getters.myDogs
+    // if(this.$store.state.breeds.length < 1){
+    //   await this.$store.dispatch("getBreedList")
+    // }
+    // this.$store.getters.myBreeds
   },
   methods: {
     searchDog(){
