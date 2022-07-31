@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center h-screen bg-slate-400">
+  <div class="flex flex-col justify-center items-center h-[96.5vh] bg-slate-400 shadow-2xl">
     <img :src="doggy" alt="" class="w-[30%] h-[30%] rounded-lg shadow-xl">
     <p class="uppercase font-bold font-serif">Breed: {{ breed }}</p>
   </div>

@@ -6,6 +6,7 @@ import { nanoid } from "nanoid";
 const store =  createStore({
     state:{
         dogs: [],
+        dogSetTwo:[],
         breeds: []
     },
     mutations:{
@@ -19,16 +20,33 @@ const store =  createStore({
             }
             state.dogs = newDogsArray
         },
+        getDogSetTwo(state, allDogs){
+            let newDogsArray = []
+            for(var d of allDogs){
+                newDogsArray.push({
+                    id: nanoid(),
+                    dogLink: d
+                })
+            }
+            state.dogSetTwo = newDogsArray
+        },
         getBreeds(state, breeds){
             state.breeds = breeds
         }
     },
     actions:{
         getDogs({commit}){
-            axios.get("https://dog.ceo/api/breeds/image/random/50")
+            axios.get("https://dog.ceo/api/breeds/image/random/12")
                 .then(response => {
                     console.log(response.data.message)
                     commit('getDogs', response.data.message)
+                })
+        },
+        getDogSetTwo({commit}){
+            axios.get("https://dog.ceo/api/breeds/image/random/30")
+                .then(response => {
+                    console.log(response.data.message)
+                    commit('getDogSetTwo', response.data.message)
                 })
         },
         getDogsByBreed({commit}, breed){
