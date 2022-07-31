@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-end mr-4">
-    <select name="" id="" v-model="breed" class="bg-slate-200 pl-2 h-10 w-[15%]">
+    <select name="" id="" v-model="breed" class="bg-slate-200 pl-2 h-10 w-[15%] md:w-[30%]">
       <option  v-for="b in $store.state.breeds" :value="b" :key="b">{{b}}</option>
     </select>
     <button class="bg-slate-300 p-2" @click="searchDog">Search Breed</button>
@@ -33,7 +33,7 @@ export default {
       await this.$store.dispatch("getDogs")
     }
     this.$store.getters.myDogs
-    
+
     if(this.$store.state.breeds.length < 1){
       await this.$store.dispatch("getBreedList")
     }
